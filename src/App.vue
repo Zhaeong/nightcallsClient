@@ -1,12 +1,33 @@
 <template>
   <div id="app">
+
+    <Navbar ref="navBar"></Navbar>
+
+    
     <router-view/>
   </div>
 </template>
 
 <script>
+
+import NavBar from '@/components/Navbar'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'Navbar': NavBar
+  },
+  data () {
+    return {
+
+    }
+  },
+  methods: {
+    changeNav()
+    {
+      this.$refs.navBar.changeNav()
+    }
+  }
 }
 </script>
 

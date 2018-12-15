@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <h1>Login</h1>
+    <h1>Register</h1>
 
     <label for="username">username</label>
     <input v-model="username" placeholder="username">
@@ -8,11 +8,7 @@
     <label for="password">password</label>
     <input v-model="password" placeholder="password">
 
-    <button v-on:click="login()">Login</button>
-
-
-    <button v-on:click="test()">test</button>
-
+    <button v-on:click="register()">Register</button>
 
   </div>
 </template>
@@ -21,7 +17,7 @@
 import PostsService from '@/services/PostsService'
 
 export default {
-  name: 'login',
+  name: 'register',
   data () {
     return {
       username: '',
@@ -37,14 +33,11 @@ export default {
       this.posts = response.data
       console.log(JSON.stringify(response.data))
     },
-    async login () {
-      await PostsService.checkUser({
+    async register () {
+      await PostsService.addUser({
         username: this.username,
         password: this.password
       })
-    },
-    test() {
-      this.$parent.changeNav();
     }
   }
 }
