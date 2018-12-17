@@ -10,7 +10,6 @@
 
     <button v-on:click="login()">Login</button>
 
-
     <button v-on:click="test()">test</button>
 
 
