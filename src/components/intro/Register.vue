@@ -34,10 +34,12 @@ export default {
       console.log(JSON.stringify(response.data))
     },
     async register () {
-      await PostsService.addUser({
+      var result = await PostsService.addUser({
         username: this.username,
         password: this.password
       })
+
+      console.log(result)
     }
   }
 }

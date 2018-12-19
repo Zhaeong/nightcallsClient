@@ -10,10 +10,8 @@
 
     <button v-on:click="login()">Login</button>
 
-    <button v-on:click="test()">test</button>
-
-
   </div>
+
 </template>
 
 <script>
@@ -37,13 +35,21 @@ export default {
       console.log(JSON.stringify(response.data))
     },
     async login () {
-      await PostsService.checkUser({
+      var resu = await PostsService.loginUser({
         username: this.username,
         password: this.password
       })
-    },
-    test() {
-      this.$parent.changeNav();
+
+      if (resu.data !== 'UNKNOWN') {
+        console.log(resu.data.username)
+        var userName = resu.data.username
+        var userId = resu.data.userid
+        localStorage.userId = userId
+        localStorage.userName = userName
+        this.$router.push({ name: 'Main', params: { userId: userId } })
+      } else {
+        alert('Unknown User')
+      }
     }
   }
 }

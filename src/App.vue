@@ -6,8 +6,6 @@
 
 <script>
 
-//import NavBar from '@/components/Navbar'
-
 export default {
   name: 'App',
   data () {
@@ -16,10 +14,6 @@ export default {
     }
   },
   methods: {
-    changeNav()
-    {
-      //this.$refs.navBar.changeNav()
-    }
   }
 }
 </script>

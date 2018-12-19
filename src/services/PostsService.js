@@ -7,7 +7,11 @@ export default {
   addUser (params) {
     console.log('registering:' + JSON.stringify(params))
     var result = Api().post('register', params)
-    console.log(result)
+    return result
+  },
+  loginUser (params) {
+    console.log('logging in:' + JSON.stringify(params))
+    var result = Api().post('login', params)
     return result
   }
 }
