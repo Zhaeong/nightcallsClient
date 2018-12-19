@@ -22,4 +22,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 # To-Do
 - check for duplicate users on register
+- generate error msgs for bad login
 - hash passwords
