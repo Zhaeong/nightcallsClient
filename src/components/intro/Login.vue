@@ -26,14 +26,8 @@ export default {
     }
   },
   mounted () {
-    this.getPosts()
   },
-  methods: {
-    async getPosts () {
-      const response = await PostsService.fetchPosts()
-      this.posts = response.data
-      console.log(JSON.stringify(response.data))
-    },
+  methods: {    
     async login () {
       var resu = await PostsService.loginUser({
         username: this.username,

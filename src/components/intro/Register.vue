@@ -25,14 +25,8 @@ export default {
     }
   },
   mounted () {
-    this.getPosts()
   },
-  methods: {
-    async getPosts () {
-      const response = await PostsService.fetchPosts()
-      this.posts = response.data
-      console.log(JSON.stringify(response.data))
-    },
+  methods: {    
     async register () {
       var result = await PostsService.addUser({
         username: this.username,
