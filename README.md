@@ -23,3 +23,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # To-Do
 - generate error msgs for bad login
 - hash passwords
+- add navbar to Main page (after successful login)
