@@ -27,13 +27,12 @@ export default {
   },
   mounted () {
   },
-  methods: {    
+  methods: {
     async login () {
-      //check if username+password fields filled in
+      // check if username+password fields filled in
       if (this.password === '') {
         alert('Please enter your password')
-      }
-      else if (this.username === '') {
+      } else if (this.username === '') {
         alert('Please enter your username')
       } else {
         var resu = await PostsService.loginUser({
