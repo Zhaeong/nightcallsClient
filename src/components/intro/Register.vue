@@ -26,7 +26,7 @@ export default {
   },
   mounted () {
   },
-  methods: {    
+  methods: {
     async register () {
       var result = await PostsService.addUser({
         username: this.username,

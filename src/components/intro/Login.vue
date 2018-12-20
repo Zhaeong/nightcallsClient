@@ -29,20 +29,27 @@ export default {
   },
   methods: {    
     async login () {
-      var resu = await PostsService.loginUser({
-        username: this.username,
-        password: this.password
-      })
-
-      if (resu.data !== 'UNKNOWN') {
-        console.log(resu.data.username)
-        var userName = resu.data.username
-        var userId = resu.data.userid
-        localStorage.userId = userId
-        localStorage.userName = userName
-        this.$router.push({ name: 'Main', params: { userId: userId } })
+      //check if username+password fields filled in
+      if (this.password === '') {
+        alert('Please enter your password')
+      }
+      else if (this.username === '') {
+        alert('Please enter your username')
       } else {
-        alert('Unknown User')
+        var resu = await PostsService.loginUser({
+          username: this.username,
+          password: this.password
+        })
+        if (resu.data !== 'UNKNOWN') {
+          console.log(resu.data.username)
+          var userName = resu.data.username
+          var userId = resu.data.userid
+          localStorage.userId = userId
+          localStorage.userName = userName
+          this.$router.push({ name: 'Main', params: { userId: userId } })
+        } else {
+          alert('Unknown User')
+        }
       }
     }
   }
