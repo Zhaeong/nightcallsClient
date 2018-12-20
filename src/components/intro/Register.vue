@@ -34,6 +34,10 @@ export default {
       })
 
       console.log(result)
+
+      if (result.data === 'ERROR_USER_NOT_UNIQUE') {
+        alert('Username is taken')
+      }
     }
   }
 }
