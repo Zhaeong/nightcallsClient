@@ -13,7 +13,7 @@ import Login from '@/components/intro/Login'
 import Register from '@/components/intro/Register'
 
 export default {
-  name: 'action',
+  name: 'Intro',
   components: {
     'Navbar': NavBar,
     'Login': Login,

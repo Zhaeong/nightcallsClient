@@ -1,12 +1,10 @@
 <template>
-
-<nav>
-  <ul class="container">
-    <li id = "Login" v-on:click="changeView($event)">Login</li>
-    <li id = "Register" v-on:click="changeView($event)">Register</li>
-  </ul>
-</nav>
-
+  <nav>
+    <ul class="container">
+      <li id = "Occupants" v-on:click="changeView($event)">Occupantss</li>
+      <li id = "Income" v-on:click="changeView($event)">Income</li>
+    </ul>
+  </nav>
 </template>
 
 <script>
